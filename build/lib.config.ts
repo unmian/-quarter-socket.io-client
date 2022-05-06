@@ -1,7 +1,7 @@
 /*
  * @Author: Quarter
  * @Date: 2021-12-29 07:29:06
- * @LastEditTime: 2022-05-06 03:24:27
+ * @LastEditTime: 2022-05-06 06:13:51
  * @LastEditors: Quarter
  * @Description: vite 组件库配置
  * @FilePath: /socket.io-client/build/lib.config.ts
@@ -16,7 +16,7 @@ export default defineConfig({
   build: {
     outDir: "lib",
     lib: {
-      entry: resolve(__dirname, "../socket.io-client/index.ts"),
+      entry: resolve(__dirname, "../index.ts"),
       name: "SocketIO",
       fileName: (format) => `index.${format}.js`,
     },
@@ -25,11 +25,14 @@ export default defineConfig({
     dts({
       outputDir: "types",
       cleanVueFileName: true,
-      include: ["socket.io-client/**"],
-      beforeWriteFile: (filePath: string, content: string) => ({
-        filePath: filePath.replace("types/socket.io-client", "types/"),
-        content,
-      }),
+      include: [
+        "engine.io-client/**",
+        "engine.io-parser/**",
+        "socket.io-client/**",
+        "socket.io-parser/**",
+        "utils/**",
+        "index.ts",
+      ],
     }),
   ],
 });

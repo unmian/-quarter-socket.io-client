@@ -1,7 +1,7 @@
 /*
  * @Author: Quarter
  * @Date: 2022-04-29 01:00:50
- * @LastEditTime: 2022-05-06 03:00:27
+ * @LastEditTime: 2022-05-06 06:14:19
  * @LastEditors: Quarter
  * @Description: XMLHttpRequest 封装
  * @FilePath: /socket.io-client/engine.io-client/transports/request.ts
@@ -163,7 +163,6 @@ class PollingRequest extends Emitter {
         }
       }
       if (4 !== this.xhr.readyState) return;
-      console.log(123, "on-load", this.xhr?.readyState, this.xhr.status);
       if (200 === this.xhr.status || 1223 === this.xhr.status) {
         this.onLoad();
       } else {
@@ -257,7 +256,6 @@ class PollingRequest extends Emitter {
         this.onError(e);
       }
       if (null != data) {
-        console.log(123, "pre-on-data", data);
         this.onData(data);
       }
     }

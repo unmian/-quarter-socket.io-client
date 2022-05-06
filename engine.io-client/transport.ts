@@ -1,7 +1,7 @@
 /*
  * @Author: Quarter
  * @Date: 2022-04-28 01:24:15
- * @LastEditTime: 2022-05-05 14:13:36
+ * @LastEditTime: 2022-05-06 06:14:06
  * @LastEditors: Quarter
  * @Description: 传输
  * @FilePath: /socket.io-client/engine.io-client/transport.ts
@@ -183,7 +183,6 @@ class Transport extends Emitter {
    * @return
    */
   onData(data: string): void {
-    console.log("data", data);
     const packet = decodePacket(data);
     this.onPacket(packet);
   }
@@ -195,7 +194,6 @@ class Transport extends Emitter {
    * @return
    */
   onPacket(packet: TransportPacket): void {
-    console.log(123, "on-packet", packet);
     this.emit("packet", packet);
   }
 

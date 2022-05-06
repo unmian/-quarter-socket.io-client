@@ -1,11 +1,3 @@
-<!--
- * @Author: Quarter
- * @Date: 2022-04-27 03:46:03
- * @LastEditTime: 2022-05-06 03:55:41
- * @LastEditors: Quarter
- * @Description: 
- * @FilePath: /socket.io-client/README.md
--->
 # @quarter/socket.io-client
 
 > 基于 socket.io-client 2.4.0 版本使用 ES6 标准和 typescript 重构

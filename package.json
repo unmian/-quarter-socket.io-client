@@ -34,11 +34,6 @@
   "scripts": {
     "dev": "vite --config ./build/dev.config.ts",
     "build": "vite build --config ./build/lib.config.ts",
-    "update:deps": "node ./scripts/update.deps",
-    "release:stage": "node ./scripts/release.stage",
-    "release:patch": "node ./scripts/release.release patch",
-    "release:minor": "node ./scripts/release.release minor",
-    "release:major": "node ./scripts/release.release major",
     "publish:private": "yarn run build && npm publish --registry https://npm.lescity.com.cn/",
     "unpublish:private": "npm unpublish --force --registry https://npm.lescity.com.cn/"
   },

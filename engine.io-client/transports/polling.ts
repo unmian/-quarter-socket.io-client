@@ -1,7 +1,7 @@
 /*
  * @Author: Quarter
  * @Date: 2022-04-28 01:24:13
- * @LastEditTime: 2022-05-06 02:20:46
+ * @LastEditTime: 2022-05-06 06:14:13
  * @LastEditors: Quarter
  * @Description: 轮询传输通道
  * @FilePath: /socket.io-client/engine.io-client/transports/polling.ts
@@ -117,7 +117,6 @@ class Polling extends Transport {
   onData(data: string): void {
     debug("polling got data %s", data);
     const callback = (packet: TransportPacket, index: number, total: number): false | undefined => {
-      console.log(123, "packet", this.readyState, packet);
       // if its the first message we consider the transport open
       if ("opening" === this.readyState && packet.type === "open") {
         this.onOpen();
@@ -179,7 +178,6 @@ class Polling extends Transport {
    * @return
    */
   write(packets: TransportPacket[]): void {
-    console.log(123, "write", JSON.stringify(packets));
     this.writable = false;
     const callbackfn = (): void => {
       this.writable = true;

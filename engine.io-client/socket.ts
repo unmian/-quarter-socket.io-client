@@ -1,7 +1,7 @@
 /*
  * @Author: Quarter
  * @Date: 2022-04-28 01:24:15
- * @LastEditTime: 2022-05-06 03:14:19
+ * @LastEditTime: 2022-05-06 06:13:55
  * @LastEditors: Quarter
  * @Description: Socket 模块
  * @FilePath: /socket.io-client/engine.io-client/socket.ts
@@ -194,7 +194,6 @@ class Socket extends Emitter {
 
     // Retry with the next transport if the transport is disabled (jsonp: false)
     let transport!: Transport;
-    console.log(123, "transportProtocal", transportProtocal);
     try {
       transport = this.createTransport(transportProtocal);
     } catch (e) {
@@ -434,7 +433,6 @@ class Socket extends Emitter {
 
     if ("open" === this.readyState && this.upgrade && this.transport?.pause) {
       debug("starting upgrade probes");
-      console.log(123, "starting upgrade probes", this.upgrades,);
       for (let i = 0, l = this.upgrades.length; i < l; i++) {
         this.probe(this.upgrades[i]);
       }
@@ -488,7 +486,6 @@ class Socket extends Emitter {
    * @return
    */
   onHandshake(data: NormalObject): void {
-    console.log("on-hand-shake", this.readyState, data);
     this.emit("handshake", data);
     this.id = data.sid;
     if (this.transport?.query) this.transport.query.sid = data.sid;
@@ -750,7 +747,6 @@ class Socket extends Emitter {
     for (const upgrade of upgrades) {
       if (this.transports.includes(upgrade)) filteredUpgrades.push(upgrade);
     }
-    console.log(123, "filterUpgrades", filteredUpgrades);
     return filteredUpgrades;
   }
 }
