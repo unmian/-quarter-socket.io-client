@@ -1,0 +1,58 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "useDefineForClassFields": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "strict": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "engine.io-client": [
+        "engine.io-client/index.ts"
+      ],
+      "engine.io-client/*": [
+        "engine.io-client/*"
+      ],
+      "engine.io-parser": [
+        "engine.io-parser/index.ts"
+      ],
+      "engine.io-parser/*": [
+        "engine.io-parser/*"
+      ],
+      "socket.io-client": [
+        "socket.io-client/index.ts"
+      ],
+      "socket.io-client/*": [
+        "socket.io-client/*"
+      ],
+      "socket.io-parser": [
+        "socket.io-parser/index.ts"
+      ],
+      "socket.io-parser/*": [
+        "socket.io-parser/*"
+      ],
+      "lib": [
+        "lib/index.es.js"
+      ],
+      "utils": [
+        "utils/index.ts"
+      ],
+      "utils/*": [
+        "utils/*"
+      ]
+    },
+    "types": [
+      "vite/client"
+    ]
+  }
+}

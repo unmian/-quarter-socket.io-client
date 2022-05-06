@@ -1,0 +1,62 @@
+{
+  "name": "@quarter/socket.io-client",
+  "version": "2.5.0",
+  "author": {
+    "name": "Quarter",
+    "email": "master@shiruihua.cn"
+  },
+  "description": "Realtime application framework (client)",
+  "keywords": [
+    "socket.io",
+    "client",
+    "typescript"
+  ],
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/unmian/-quarter-socket.io-client"
+  },
+  "files": [
+    "lib",
+    "types"
+  ],
+  "main": "lib/index.umd.js",
+  "module": "lib/index.es.js",
+  "exports": {
+    ".": {
+      "import": "./lib/index.es.js",
+      "require": "./lib/index.umd.js"
+    }
+  },
+  "typings": "types/index.d.ts",
+  "homepage": "https://github.com/unmian/-quarter-socket.io-client",
+  "bugs": "https://github.com/unmian/-quarter-socket.io-client/issues",
+  "scripts": {
+    "dev": "vite --config ./build/dev.config.ts",
+    "build": "vite build --config ./build/lib.config.ts",
+    "update:deps": "node ./scripts/update.deps",
+    "release:stage": "node ./scripts/release.stage",
+    "release:patch": "node ./scripts/release.release patch",
+    "release:minor": "node ./scripts/release.release minor",
+    "release:major": "node ./scripts/release.release major",
+    "publish:private": "yarn run build && npm publish --registry https://npm.lescity.com.cn/",
+    "unpublish:private": "npm unpublish --force --registry https://npm.lescity.com.cn/"
+  },
+  "devDependencies": {
+    "@types/debug": "^4.1.7",
+    "@types/node": "^17.0.23",
+    "typescript": "^4.6.3",
+    "vite": "^2.9.1",
+    "vite-plugin-dts": "^1.0.5"
+  },
+  "dependencies": {
+    "debug": "^4.3.4"
+  },
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "ie >= 10",
+    "iOS >= 8",
+    "Android >= 4"
+  ]
+}
